@@ -2,6 +2,7 @@
 #include <string>
 #include <random>
 #include <cmath>
+#include <cstdlib>
 
 int main(int argc, char *argv[])
 {
@@ -21,8 +22,9 @@ int main(int argc, char *argv[])
     }
     else {
         std::cout << "Illegal input\n";
+        std::exit(EXIT_FAILURE);
     }
-    
+
     for (int i = 0; i < pass_len; i=i+3) {
         std::string t1{viable_chars[distrib(engine)]};
         std::string t2{viable_chars_capital[distrib(engine)]};

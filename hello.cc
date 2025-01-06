@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 #include <random>
+#include <cmath>
 
-int main(int argc, char** argv)
+int main(int argc, char *argv[])
 {
     const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};
     const std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
@@ -11,7 +12,17 @@ int main(int argc, char** argv)
     std::string password{};
     std::default_random_engine engine{rd()};
     std::uniform_int_distribution<int> distrib(0,viable_chars.size()-1);
-    int pass_len{12};
+    int pass_len{0};
+    if (argc == 1) {
+        pass_len = 12;
+    }
+    else if (argc == 2) {
+        pass_len = atof(argv[1]);
+    }
+    else {
+        std::cout << "Illegal input\n";
+    }
+    
     for (int i = 0; i < pass_len; i=i+3) {
         std::string t1{viable_chars[distrib(engine)]};
         std::string t2{viable_chars_capital[distrib(engine)]};

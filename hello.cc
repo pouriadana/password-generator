@@ -4,8 +4,8 @@
 
 int main()
 {
-    std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};
-    std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+    const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};
+    const std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
     std::random_device rd;
     std::default_random_engine engine{rd()};
     std::uniform_int_distribution<int> distrib(0,viable_chars.size()-1);

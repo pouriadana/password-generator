@@ -3,6 +3,7 @@
 #include <random>
 #include <cmath>
 #include <cstdlib>
+#include <vector>
 
 int main(int argc, char *argv[])
 {
@@ -25,11 +26,16 @@ int main(int argc, char *argv[])
         std::exit(EXIT_FAILURE);
     }
 
-    for (int i = 0; i < pass_len; i=i+3) {
-        std::string t1{viable_chars[distrib(engine)]};
-        std::string t2{viable_chars_capital[distrib(engine)]};
-        std::string t3{non_alphabetic_chars[distrib(engine)]};
-        password += t1 + t2 + t3;
+    /* Allow for the random selection of the type of character */
+    std::vector<char> candidates {viable_chars[distrib(engine)], viable_chars_capital[distrib(engine)], non_alphabetic_chars[distrib(engine)]};
+    for (int i = 0; i < pass_len; ++i) {
+        // std::string t1{viable_chars[distrib(engine)]};
+        // std::string t2{viable_chars_capital[distrib(engine)]};
+        // std::string t3{non_alphabetic_chars[distrib(engine)]};
+        // password += t1 + t2 + t3;
+        int rsubscript{ distrib(engine)%3 };
+        std::string chosen_char{ candidates[rsubscript] };
+        password += chosen_char;
     }
     std::cout << '\n';
     std::cout << password << '\n';

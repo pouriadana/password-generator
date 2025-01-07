@@ -43,9 +43,9 @@ class Rand_int {
 /* Main function */
 int main(int argc, char *argv[])
 {
-    const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};          // length == 26
-    const std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};  // length == 26
-    const std::string non_alphabetic_chars {"0123456789!?<>(){}@#$%^&*"};   // length == 25
+    const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};          // length == 26
+    const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};  // length == 26
+    const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};   // length == 25
     std::string password{};
     int pass_len{0};
     if (argc == 1) {
@@ -59,15 +59,15 @@ int main(int argc, char *argv[])
         std::exit(EXIT_FAILURE);
     }
     /* Allow for the random selection of the type of character */
-    Rand_int rand_alphabet(0, viable_chars.size()-1);
-    Rand_int rand_non_alphabet(0, non_alphabetic_chars.size()-1);
-    Rand_int candidate_select_num(0, 1000);
+    Rand_int rfor_alphabet(0, alphabet.size()-1);
+    Rand_int rfor_numsymbol(0, numsymbol.size()-1);
+    Rand_int rfor_candidate(0, 1000);
     char candidates[3] {0,0,0};
     for (int i = 0; i < pass_len; ++i) {
-        candidates[0] = viable_chars[rand_alphabet()];
-        candidates[1] = viable_chars_capital[rand_alphabet()];
-        candidates[2] = non_alphabetic_chars[rand_non_alphabet()];
-        int rsubscript{ candidate_select_num()%3 };
+        candidates[0] = alphabet[rfor_alphabet()];
+        candidates[1] = alphabet_capital[rfor_alphabet()];
+        candidates[2] = numsymbol[rfor_numsymbol()];
+        int rsubscript{ rfor_candidate()%3 };
         std::string chosen_char{ candidates[rsubscript] };
         password += chosen_char;
     }

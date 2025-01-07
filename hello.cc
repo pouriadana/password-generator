@@ -74,11 +74,12 @@ int main(int argc, char *argv[])
     if (argc > 2 && isdigit(argv[2])) {
         birthdate_flag = true;
     }
-    if (birthdate_flag == true) {
+    if (birthdate_flag == true) {                                       // cut the birthdate into two pairs of two digits each
         int birthdate{static_cast<int>(atof(argv[2]))};
         int disected_birthdate[2] {0,0};
         disected_birthdate[0] = birthdate % 100;
         birthdate /= 100;
         disected_birthdate[1] = birthdate % 100;
+        std::cout << disected_birthdate[0] << '\t' << disected_birthdate[1];
     }
 } 

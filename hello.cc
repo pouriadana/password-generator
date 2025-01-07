@@ -55,15 +55,15 @@ int main(int argc, char *argv[])
         std::exit(EXIT_FAILURE);
     }
     /* Allow for the random selection of the type of character */
-    Rand_int rfor_alphabet(0, alphabet.size()-1);
-    Rand_int rfor_numsymbol(0, numsymbol.size()-1);
+    Rand_int rfor_alphabet(0, alphabet.size()-1);                       // create a generator for the alphabet data size
+    Rand_int rfor_numsymbol(0, numsymbol.size()-1);                     // create a generator for the number/symbol data size
     Rand_int rfor_candidate(0, 1000);
-    char candidates[3] {0,0,0};
+    char candidates[3] {0,0,0};                                         // hold, in each iteration, 3 different chars of different type: small, capital & num/sym
     for (int i = 0; i < pass_len; ++i) {
         candidates[0] = alphabet[rfor_alphabet()];
         candidates[1] = alphabet_capital[rfor_alphabet()];
         candidates[2] = numsymbol[rfor_numsymbol()];
-        int rsubscript{ rfor_candidate()%3 };
+        int rsubscript{ rfor_candidate()%3 };                           // select one char with a distinct type from the created candidate chars
         std::string chosen_char{ candidates[rsubscript] };
         password += chosen_char;
     }

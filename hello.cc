@@ -14,16 +14,18 @@ bool isdigit(std::string c)
         return result;
     }
     else {
-        char char_ext = c[0];
-        if (char_ext - '0' >= 0 && char_ext - '0' <= 9) {
-            result = true;
+        result = true;
+        for (int i = 0; i < c.size(); ++i) {
+            if (!(c[i] - '0' >= 0 && c[i] - '0' <= 9)) {
+                result = false;
+                break;
+            }
         }
     }
     return result;
 }
 int main(int argc, char *argv[])
 {
-    std::cout << isdigit(argv[1]);
     const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};          // length == 26
     const std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};  // length == 26
     const std::string non_alphabetic_chars {"0123456789!?<>(){}@#$%^&*"};   // length == 25
@@ -35,7 +37,7 @@ int main(int argc, char *argv[])
     if (argc == 1) {
         pass_len = 12;
     }
-    else if (argc == 2) {
+    else if (argc == 2 && isdigit(argv[1])) {
         pass_len = atof(argv[1]);
     }
     else {

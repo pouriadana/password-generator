@@ -24,6 +24,23 @@ bool isdigit(std::string c)
     }
     return result;
 }
+
+/* Class definitions */
+class Rand_int {
+    private:
+        std::random_device rd;
+        std::default_random_engine engine;
+        std::uniform_int_distribution<int> distrib;
+    public:
+        Rand_int(int low, int high) : distrib{low, high} {
+            engine.seed(rd());
+        }
+        int operator()() {
+            return distrib(engine);
+        }
+};
+
+
 int main(int argc, char *argv[])
 {
     const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};          // length == 26

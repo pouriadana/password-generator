@@ -7,9 +7,9 @@
 
 int main(int argc, char *argv[])
 {
-    const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};
-    const std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
-    const std::string non_alphabetic_chars {"0123456789!?<>(){}@#$%^&*"};
+    const std::string viable_chars {"abcdefghijklmnopqrstuvwxyz"};          // length == 26
+    const std::string viable_chars_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};  // length == 26
+    const std::string non_alphabetic_chars {"0123456789!?<>(){}@#$%^&*"};   // length == 25
     std::random_device rd;
     std::string password{};
     std::default_random_engine engine{rd()};

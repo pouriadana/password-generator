@@ -10,18 +10,12 @@
 /* Helper functions */
 bool isdigit(std::string c)
 {
-    /* Support up to 99 */
-    bool result = false;
-    if (c.size() > 2) {
-        return result;
-    }
-    else {
-        result = true;
-        for (int i = 0; i < c.size(); ++i) {
-            if (!(c[i] - '0' >= 0 && c[i] - '0' <= 9)) {
-                result = false;
-                break;
-            }
+    bool result;
+    result = true;
+    for (int i = 0; i < c.size(); ++i) {
+        if (!(c[i] - '0' >= 0 && c[i] - '0' <= 9)) {
+            result = false;
+            break;
         }
     }
     return result;
@@ -53,7 +47,7 @@ int main(int argc, char *argv[])
     if (argc == 1) {
         pass_len = MIN_PASS_LEN;
     }
-    else if (argc == 2 && isdigit(argv[1])) {
+    else if (argc >= 2 && isdigit(argv[1])) {
         pass_len = atof(argv[1]);
     }
     else {

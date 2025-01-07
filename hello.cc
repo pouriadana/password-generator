@@ -27,12 +27,15 @@ int main(int argc, char *argv[])
     }
 
     /* Allow for the random selection of the type of character */
-    std::vector<char> candidates {viable_chars[distrib(engine)], viable_chars_capital[distrib(engine)], non_alphabetic_chars[distrib(engine)]};
+    char candidates[3] {0,0,0};
     for (int i = 0; i < pass_len; ++i) {
         // std::string t1{viable_chars[distrib(engine)]};
         // std::string t2{viable_chars_capital[distrib(engine)]};
         // std::string t3{non_alphabetic_chars[distrib(engine)]};
         // password += t1 + t2 + t3;
+        candidates[0] = viable_chars[distrib(engine)];
+        candidates[1] = viable_chars_capital[distrib(engine)];
+        candidates[2] = non_alphabetic_chars[distrib(engine)];
         int rsubscript{ distrib(engine)%3 };
         std::string chosen_char{ candidates[rsubscript] };
         password += chosen_char;

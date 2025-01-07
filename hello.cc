@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <vector>
 
+/* Symbolic constants */
+#define MIN_PASS_LEN 12
+
 /* Helper functions */
 bool isdigit(std::string c)
 {
@@ -45,11 +48,11 @@ int main(int argc, char *argv[])
 {
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};  // length == 26
-    const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};   // length == 25
+    const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};          // length == 25
     std::string password{};
     int pass_len{0};
     if (argc == 1) {
-        pass_len = 12;
+        pass_len = MIN_PASS_LEN;
     }
     else if (argc == 2 && isdigit(argv[1])) {
         pass_len = atof(argv[1]);

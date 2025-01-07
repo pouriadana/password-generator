@@ -75,4 +75,4 @@ int main(int argc, char *argv[])
     }
     std::cout << '\n';
     std::cout << password << '\n';
-}
+} 

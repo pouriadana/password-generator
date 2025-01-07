@@ -3,7 +3,6 @@
 #include <random>
 #include <cmath>
 #include <cstdlib>
-#include <vector>
 
 /* Symbolic constants */
 #define MIN_PASS_LEN 12

@@ -77,9 +77,17 @@ int main(int argc, char *argv[])
     if (birthdate_flag == true) {                                       // cut the birthdate into two pairs of two digits each
         int birthdate{static_cast<int>(atof(argv[2]))};
         int disected_birthdate[2] {0,0};
-        disected_birthdate[0] = birthdate % 100;
-        birthdate /= 100;
-        disected_birthdate[1] = birthdate % 100;
-        std::cout << disected_birthdate[0] << '\t' << disected_birthdate[1];
+        disected_birthdate[0] = birthdate % 100;                        // last two digits (e.g. "94" in "1994")
+        birthdate /= 100;                                               
+        disected_birthdate[1] = birthdate % 100;                        // first two digits (e.g. "19" in "1994")
+        Rand_int rfor_replace(0, pass_len -2);                          // at most the subscript of the penultimate character to support a pair
+        int sub1{0};
+        int sub2{0};
+        while (abs(sub1-sub2) < 2) {
+            sub1 = rfor_replace();
+            sub2 = rfor_replace();
+        }
+        std::cout << sub1 << '\t' << sub2;                              // DEBUG
+        
     }
 } 

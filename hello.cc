@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     std::string password{};
     std::default_random_engine engine{rd()};
     std::uniform_int_distribution<int> distrib(0,viable_chars.size()-1);
+    std::uniform_int_distribution<int> distrib_non_alpha(0, non_alphabetic_chars.size()-1);
     int pass_len{0};
     if (argc == 1) {
         pass_len = 12;
@@ -49,7 +50,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < pass_len; ++i) {
         candidates[0] = viable_chars[distrib(engine)];
         candidates[1] = viable_chars_capital[distrib(engine)];
-        candidates[2] = non_alphabetic_chars[distrib(engine)];
+        candidates[2] = non_alphabetic_chars[distrib_non_alpha(engine)];
         int rsubscript{ distrib(engine)%3 };
         std::string chosen_char{ candidates[rsubscript] };
         password += chosen_char;

@@ -70,9 +70,15 @@ int main(int argc, char *argv[])
     std::cout << '\n';
     std::cout << password << '\n';
     /* Integrate birthdate into the password*/
-    int birthdate{static_cast<int>(atof(argv[2]))};
-    int disected_birthdate[2] {0,0};
-    disected_birthdate[0] = birthdate % 100;
-    birthdate /= 100;
-    disected_birthdate[1] = birthdate % 100;
+    bool birthdate_flag = false;
+    if (argc > 2 && isdigit(argv[2])) {
+        birthdate_flag = true;
+    }
+    if (birthdate_flag == true) {
+        int birthdate{static_cast<int>(atof(argv[2]))};
+        int disected_birthdate[2] {0,0};
+        disected_birthdate[0] = birthdate % 100;
+        birthdate /= 100;
+        disected_birthdate[1] = birthdate % 100;
+    }
 } 

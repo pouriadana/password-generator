@@ -127,5 +127,8 @@ int main(int argc, char *argv[])
     }
     /* Integrate favorite color into the password */
     bool favcolor_flag = false;
-    
+    if (argc > 3 && isalphabetic(argv[3])) {
+        favcolor_flag = true;
+        // std::cout << argv[3] << '\n';                                                // DEBUG
+    }
 } 

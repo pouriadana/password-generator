@@ -25,7 +25,11 @@ bool isdigit(std::string c)
 void show_help()
 // shows information on how to use the program
 {
-    
+    std::cout << "\nUsage: passgen [COMMANDS]";
+    std::cout << "Commands:\n";
+    std::cout << "\t<number>\t\t\tFirst command specifies the length of the password\n";
+    std::cout << "\t<number>\t\t\tSecond command specifies the optional integration of birth year into the password";
+    std::cout << '\n';
 }
 
 /* Class definitions */

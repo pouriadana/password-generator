@@ -144,7 +144,9 @@ int main(int argc, char *argv[])
         // std::cout << sub1 << '\t' << sub2;                                           // DEBUG
         password.replace(sub1, 2, std::to_string(disected_birthdate[1]));
         password.replace(sub2, 2, std::to_string(disected_birthdate[0]));
-        std::cout << '\n' << password;
+        fill_bytwo(filled, sub1);
+        fill_bytwo(filled, sub2);
+        std::cout << '\n' << password << '\n';
     }
     /* Integrate favorite color into the password */
     bool favcolor_flag = false;

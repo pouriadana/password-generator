@@ -22,6 +22,12 @@ bool isdigit(std::string c)
     return result;
 }
 
+void show_help()
+// shows information on how to use the program
+{
+    
+}
+
 /* Class definitions */
 class Rand_int {
     private:

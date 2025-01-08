@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <string>
+#include <string.h>
 
 /* Symbolic constants */
 #define MIN_PASS_LEN 12
@@ -25,8 +26,8 @@ bool isdigit(std::string c)
 void show_help()
 // shows information on how to use the program
 {
-    std::cout << "\nUsage: passgen [COMMANDS]";
-    std::cout << "Commands:\n";
+    std::cout << "\nUsage: passgen [COMMANDS]\n\n";
+    std::cout << "    Commands:\n";
     std::cout << "\t<number>\t\t\tFirst command specifies the length of the password\n";
     std::cout << "\t<number>\t\t\tSecond command specifies the optional integration of birth year into the password";
     std::cout << '\n';
@@ -50,6 +51,10 @@ class Rand_int {
 /* Main function */
 int main(int argc, char *argv[])
 {
+    if (argc > 1 && (strcmp(argv[1], "--help") == 0)) {
+        show_help();
+        std::exit(EXIT_SUCCESS);
+    }
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};                          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};                  // length == 26
     const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};                          // length == 25

@@ -57,6 +57,13 @@ void fill_arr_zero(bool arr[], int len)
         ;
 }
 
+void fill_bytwo(bool arr[], int pos)
+// fill pos and pos+1 in arr with 1/true values
+{
+    for (int i = pos; i < pos+2; arr[i++] = true)
+        ;
+}
+
 /* Class definitions */
 class Rand_int {
     private:

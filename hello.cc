@@ -26,7 +26,14 @@ bool isdigit(std::string c)
 bool isalphabetic(std::string c)
 // given a string, return true of all characters belong to the English alphabet
 {
-    
+    std::string digits {"0123456789"};
+    bool truth_flag = true;
+    for (int i = 0; i < digits.size(); ++i) {
+        if (c.find(digits[i]) != c.npos) {
+            truth_flag = false;
+        }
+    }
+    return truth_flag;
 }
 
 void show_help()

@@ -23,6 +23,11 @@ bool isdigit(std::string c)
     }
     return result;
 }
+bool isalphabetic(std::string c)
+// given a string, return true of all characters belong to the English alphabet
+{
+    
+}
 
 void show_help()
 // shows information on how to use the program
@@ -114,5 +119,6 @@ int main(int argc, char *argv[])
         std::cout << '\n' << password;
     }
     /* Integrate favorite color into the password */
+    bool favcolor_flag = false;
     
 } 

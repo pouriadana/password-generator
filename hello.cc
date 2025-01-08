@@ -50,6 +50,13 @@ void show_help()
     std::cout << '\n';
 }
 
+void fill_arr_zero(bool arr[], int len)
+// given a built-in array, fill all the elements with 0/false
+{
+    for (int i = 0; i < len; arr[i++] = false)
+        ;
+}
+
 /* Class definitions */
 class Rand_int {
     private:

@@ -8,6 +8,7 @@
 
 /* Symbolic constants */
 #define MIN_PASS_LEN 12
+#define MAX_PASS_LEN 100
 
 /* Helper functions */
 bool isdigit(std::string c)

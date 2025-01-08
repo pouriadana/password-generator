@@ -144,8 +144,8 @@ int main(int argc, char *argv[])
         // std::cout << sub1 << '\t' << sub2;                                           // DEBUG
         password.replace(sub1, 2, std::to_string(disected_birthdate[1]));
         password.replace(sub2, 2, std::to_string(disected_birthdate[0]));
-        fill_bytwo(filled, sub1);
-        fill_bytwo(filled, sub2);
+        fill_bytwo(filled, sub1);                                                       // record birth year (pair 1) position in the password
+        fill_bytwo(filled, sub2);                                                       // record birth year (pair 2) position in the password
         std::cout << '\n' << password << '\n';
     }
     /* Integrate favorite color into the password */

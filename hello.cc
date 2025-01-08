@@ -109,6 +109,9 @@ int main(int argc, char *argv[])
     }
     // std::cout << '\n';                                                               // DEBUG
     // std::cout << password << '\n';                                                   // DEBUG
+
+    fill_arr_zero(filled, MAX_PASS_LEN);                                                // before inserting any meaning into the pass, reset all pos to 0/false
+
     /* Integrate birthdate into the password */
     bool birthdate_flag = false;
     if (argc > 2 && isdigit(argv[2])) {

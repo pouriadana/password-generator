@@ -11,6 +11,7 @@
 
 /* Helper functions */
 bool isdigit(std::string c)
+// Given a string, return true if all of its characters are digits
 {
     bool result;
     result = true;
@@ -85,7 +86,7 @@ int main(int argc, char *argv[])
     }
     // std::cout << '\n';                                                               // DEBUG
     // std::cout << password << '\n';                                                   // DEBUG
-    /* Integrate birthdate into the password*/
+    /* Integrate birthdate into the password */
     bool birthdate_flag = false;
     if (argc > 2 && isdigit(argv[2])) {
         birthdate_flag = true;
@@ -112,4 +113,6 @@ int main(int argc, char *argv[])
         password.replace(sub2, 2, std::to_string(disected_birthdate[0]));
         std::cout << '\n' << password;
     }
+    /* Integrate favorite color into the password */
+    
 } 

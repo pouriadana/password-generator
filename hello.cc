@@ -10,6 +10,9 @@
 #define MIN_PASS_LEN 12
 #define MAX_PASS_LEN 100
 
+/* Global variables */
+bool filled[MAX_PASS_LEN];
+
 /* Helper functions */
 bool isdigit(std::string c)
 // Given a string, return true if all of its characters are digits

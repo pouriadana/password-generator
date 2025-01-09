@@ -45,9 +45,10 @@ void show_help()
 {
     std::cout << "\nUsage: passgen [COMMANDS]\n\n";
     std::cout << "    Commands:\n";
-    std::cout << "\t<number>\t\t\tFirst command specifies the length of the password\n";
-    std::cout << "\t<number>\t\t\tSecond command specifies the optional integration of birth year into the password";
-    std::cout << '\n';
+    std::cout << "\t<number>\t\t\tFirst command specifies the length of the password\n"
+              << "\t<number>\t\t\tSecond command specifies the optional integration of birth year into the password\n"
+              << "\t<number>\t\t\tThird command specifies the optional integration of your favorite color into the password"
+              << '\n';
 }
 
 void fill_arr_zero(bool arr[], int len)

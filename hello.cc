@@ -111,8 +111,8 @@ int main(int argc, char *argv[])
         candidates[0] = alphabet[rfor_alphabet()];
         candidates[1] = alphabet_capital[rfor_alphabet()];
         candidates[2] = numsymbol[rfor_numsymbol()];
-        int rsubscript{ rfor_candidate()%3 };                                           // select one char with a distinct type from the created candidate chars
-        std::string chosen_char{ candidates[rsubscript] };
+        int rsubscript{rfor_candidate()%3};                                             // select one char with a distinct type from the created candidate chars
+        std::string chosen_char{candidates[rsubscript]};
         password += chosen_char;
     }
     // std::cout << '\n';                                                               // DEBUG

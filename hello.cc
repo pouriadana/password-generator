@@ -153,5 +153,9 @@ int main(int argc, char *argv[])
     if (argc > 3 && isalphabetic(argv[3])) {
         favcolor_flag = true;
         // std::cout << argv[3] << '\n';                                                // DEBUG
+        std::string favcolor = argv[3];
+        for (int i = 0; i < favcolor.size(); ++i) {
+            
+        }
     }
 } 

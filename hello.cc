@@ -47,7 +47,7 @@ void show_help()
     std::cout << "    Commands:\n";
     std::cout << "\t<number>\t\t\tFirst command specifies the length of the password\n"
               << "\t<number>\t\t\tSecond command specifies the optional integration of birth year into the password\n"
-              << "\t<number>\t\t\tThird command specifies the optional integration of your favorite color into the password"
+              << "\t<English word>\t\t\tThird command specifies the optional integration of your favorite color into the password"
               << "\n\n\n";
 }
 

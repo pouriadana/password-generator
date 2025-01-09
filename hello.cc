@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
         password.replace(sub2, 2, std::to_string(disected_birthdate[0]));
         fill_bytwo(filled, sub1);                                                       // record birth year (pair 1) position in the password
         fill_bytwo(filled, sub2);                                                       // record birth year (pair 2) position in the password
-        std::cout << '\n' << password << '\n';
+        // std::cout << '\n' << password << '\n';                                       // DEBUG
     }
     /* Integrate favorite color into the password */
     bool favcolor_flag = false;
@@ -163,6 +163,7 @@ int main(int argc, char *argv[])
                 }
             }
         }
-        std::cout << '\n' << password;
+        // std::cout << '\n' << password;                                               // DEBUG
     }
+    std::cout << '\n' << password;
 } 

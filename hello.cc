@@ -125,10 +125,6 @@ int main(int argc, char *argv[])
     if (argc > 2 && isdigit(argv[2])) {
         birthdate_flag = true;
     }
-    else {
-        std::cout << '\n';                                                  
-        std::cout << password << '\n';
-    }
     if (birthdate_flag == true) {                                                       // cut the birthdate into two pairs of two digits each
         int birthdate{static_cast<int>(atof(argv[2]))};
         int disected_birthdate[2] {0,0};

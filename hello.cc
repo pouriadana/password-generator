@@ -154,8 +154,15 @@ int main(int argc, char *argv[])
         favcolor_flag = true;
         // std::cout << argv[3] << '\n';                                                // DEBUG
         std::string favcolor = argv[3];
-        for (int i = 0; i < favcolor.size(); ++i) {
-            
+        for (int color = 0; color < favcolor.size(); ++color) {
+            for (int i = 0; i < password.size(); ++i) {
+                if (filled[i] == false) {
+                    password[i] = favcolor[color];
+                    filled[i] = true;
+                    break;
+                }
+            }
         }
+        std::cout << '\n' << password;
     }
 } 

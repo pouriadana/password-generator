@@ -149,9 +149,9 @@ int main(int argc, char *argv[])
     bool favcolor_flag = false;
     if (argc > 3 && isalphabetic(argv[3])) {
         favcolor_flag = true;
-        // std::cout << argv[3] << '\n'; 
+        // std::cout << argv[3] << '\n';                                                // DEBUG
     }
-    if (favcolor_flag == true) {                                                                                   // DEBUG
+    if (favcolor_flag == true) {
         std::string favcolor = argv[3];
         for (int color = 0; color < favcolor.size(); ++color) {
             for (int i = 0; i < password.size(); ++i) {

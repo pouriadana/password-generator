@@ -124,6 +124,36 @@ int main(int argc, char *argv[])
             }
         }
     }
+    // std::cout << "-l: " << passlen_flag
+    //           << "\n-y: " << byear_flag
+    //           << "\nfavcolor: " << favcolor_flagg
+    //           << "\nfavnumber: " << favnumber_flag
+    //           << '\n';
+    int length_val{0};
+    int byear_val{0};
+    std::string favcolor_val{};
+    int favnumber_val{0};
+    for (int ncommand = 2; ncommand < argc; ++ncommand) {
+        if (ncommand%2 == 0) {
+            if (isdigit(argv[ncommand])) {
+                if (strcmp(argv[ncommand - 1], "-l") == 0) {
+                    length_val = atof(argv[ncommand]);
+                }
+                else if (strcmp(argv[ncommand - 1], "-y") == 0) {
+                    byear_val = atof(argv[ncommand]);
+                }
+                else if (strcmp(argv[ncommand - 1], "-fn") == 0) {
+                    favnumber_val = atof(argv[ncommand]);
+                }
+                else {
+                    std::cerr << "Invalid argument(s)\n\n";
+                    std::exit(EXIT_FAILURE);
+                }
+            }
+            
+        }
+    }
+
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};                          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};                  // length == 26
     const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};                          // length == 25

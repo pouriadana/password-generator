@@ -175,9 +175,6 @@ int main(int argc, char *argv[])
         pass_len = MIN_PASS_LEN;
         passlen_flag = true;
     }
-    // else if (argc >= 2 && isdigit(argv[1])) {
-    //     pass_len = atof(argv[1]);
-    // }
     else if (!(passlen_flag || byear_flag || favcolor_flagg || favnumber_flag)) {
         std::cout << "Illegal input\n";
         std::exit(EXIT_FAILURE);

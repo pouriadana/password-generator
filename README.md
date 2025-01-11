@@ -20,3 +20,9 @@ g++ -std=c++2c -o passgen hello.cc
 - Support up to 3 arguments to allow personalization of the password
 - Error checking for wrong input
 - Support arbitrary length password (if personalization is selected, only up to 100)
+
+# Development plans
+- [x] allow custom length
+- [x] allow year integration
+- [x] allow favorite color integration
+- [ ] allow favorite number integraion

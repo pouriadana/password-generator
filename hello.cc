@@ -124,11 +124,11 @@ int main(int argc, char *argv[])
             }
         }
     }
-    // std::cout << "-l: " << passlen_flag
-    //           << "\n-y: " << byear_flag
-    //           << "\nfavcolor: " << favcolor_flagg
-    //           << "\nfavnumber: " << favnumber_flag
-    //           << '\n';
+    std::cout << "-l: " << passlen_flag
+              << "\n-y: " << byear_flag
+              << "\nfavcolor: " << favcolor_flagg
+              << "\nfavnumber: " << favnumber_flag
+              << '\n';
     int length_val{0};
     int byear_val{0};
     std::string favcolor_val{};
@@ -150,9 +150,22 @@ int main(int argc, char *argv[])
                     std::exit(EXIT_FAILURE);
                 }
             }
-            
+            if (isalphabetic(argv[ncommand])) {
+                if (strcmp(argv[ncommand - 1], "-fc") == 0) {
+                    favcolor_val = argv[ncommand];
+                }
+                else {
+                    std::cerr << "Invalid argument(s)\n\n";
+                    std::exit(EXIT_FAILURE);
+                }
+            }
         }
     }
+    std::cout << "Length: " << length_val
+              << "\nyear: " << byear_val
+              << "\ncolor: " << favcolor_val
+              << "\nnumber: " << favnumber_val
+              << "\n";
 
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};                          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};                  // length == 26

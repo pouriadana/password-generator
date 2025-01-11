@@ -200,12 +200,9 @@ int main(int argc, char *argv[])
     fill_arr_zero(filled, MAX_PASS_LEN);                                                // before inserting any meaning into the pass, reset all pos to 0/false
 
     /* Integrate birthdate into the password */
-    bool birthdate_flag = false;
-    if (argc > 2 && isdigit(argv[2])) {
-        birthdate_flag = true;
-    }
+    bool birthdate_flag = byear_flag;
     if (birthdate_flag == true) {                                                       // cut the birthdate into two pairs of two digits each
-        int birthdate{static_cast<int>(atof(argv[2]))};
+        int birthdate{byear_val};
         int disected_birthdate[2] {0,0};
         disected_birthdate[0] = birthdate % 100;                                        // last two digits (e.g. "94" in "1994")
         birthdate /= 100;                                               
@@ -225,11 +222,7 @@ int main(int argc, char *argv[])
         // std::cout << '\n' << password << '\n';                                       // DEBUG
     }
     /* Integrate favorite color into the password */
-    bool favcolor_flag = false;
-    if (argc > 3 && isalphabetic(argv[3])) {
-        favcolor_flag = true;
-        // std::cout << argv[3] << '\n';                                                // DEBUG
-    }
+    bool favcolor_flag = favcolor_flagg;
     if (favcolor_flag == true) {
         std::string favcolor = argv[3];
         for (int color = 0; color < favcolor.size(); ++color) {

@@ -14,3 +14,8 @@ A commandline program in C++ that creates random passwords from English small an
 ```powershell
 g++ -std=c++2c -o passgen hello.cc
 ```
+# Feature highlights
+- ```std::random_device``` to allow for unique random generation in each run of the program
+- Custom class ```Rand_int``` to ease random number creation in a given range
+- Support up to 3 arguments to allow personalization of the password
+- Error checking for wrong input

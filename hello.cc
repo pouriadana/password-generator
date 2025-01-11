@@ -161,11 +161,11 @@ int main(int argc, char *argv[])
             }
         }
     }
-    std::cout << "Length: " << length_val
-              << "\nyear: " << byear_val
-              << "\ncolor: " << favcolor_val
-              << "\nnumber: " << favnumber_val
-              << "\n";
+    // std::cout << "Length: " << length_val                                            // DEBUG
+    //           << "\nyear: " << byear_val
+    //           << "\ncolor: " << favcolor_val
+    //           << "\nnumber: " << favnumber_val
+    //           << "\n";
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};                          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};                  // length == 26
     const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};                          // length == 25

@@ -91,9 +91,10 @@ int main(int argc, char *argv[])
     bool passlen_flag = false;
     bool byear_flag = false;
     bool favcolor_flagg = false;
+    bool favnumber_flag = false;
     for (int ncommand = 1; ncommand < argc; ++ncommand) {                               // sub-0 is program name
-        if (ncommand%2 != 0) {                                                          // argument specifier (e.g. -l or -y for length and year repsectively)
-            if (strlen(argv[ncommand]) < 2 || argv[ncommand][0] != '-') {
+        if (ncommand%2 != 0) {                                                          // argument specifier (e.g. -l or -y for length and year repsectively)...
+            if (strlen(argv[ncommand]) < 2 || argv[ncommand][0] != '-') {               // ... starts on odd subscripts
                 std::cerr << "Invalid argument(s)\n\n";
                 std::exit(EXIT_FAILURE);
             }
@@ -105,6 +106,18 @@ int main(int argc, char *argv[])
                     byear_flag = true;
                 }
                 else if (!passlen_flag && !byear_flag) {
+                    std::cerr << "Invalid argument(s)\n\n";
+                    std::exit(EXIT_FAILURE);
+                }
+            }
+            else if (strlen(argv[ncommand]) == 3 && argv[ncommand][1] == 'f') {
+                if (argv[ncommand][2] == 'c') {
+                    favcolor_flagg = true;
+                }
+                else if (argv[ncommand][2] == 'n') {
+                    favnumber_flag = true;
+                }
+                if (!favcolor_flagg && !favnumber_flag) {
                     std::cerr << "Invalid argument(s)\n\n";
                     std::exit(EXIT_FAILURE);
                 }

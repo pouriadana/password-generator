@@ -228,11 +228,10 @@ int main(int argc, char *argv[])
     /* Integrate favorite color into the password */
     bool favcolor_flag = favcolor_flagg;
     if (favcolor_flag == true) {
-        std::string favcolor = argv[3];
-        for (int color = 0; color < favcolor.size(); ++color) {
+        for (int color = 0; color < favcolor_val.size(); ++color) {
             for (int i = 0; i < password.size(); ++i) {
                 if (filled[i] == false) {
-                    password[i] = favcolor[color];
+                    password[i] = favcolor_val[color];
                     filled[i] = true;
                     break;
                 }

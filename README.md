@@ -4,7 +4,13 @@ A commandline program in C++ that creates random passwords from English small an
 
 ## Usage
 
-```.\passgen --help```
-```.\passgen -l 10```
-```.\passgen -y 1994 -l 8```
-```.\passgen -fc blue -y 2000```
+```powershell
+.\passgen --help
+.\passgen -l 10
+.\passgen -y 1994 -l 8
+.\passgen -fc blue -y 2000
+```
+## Compilation
+```powershell
+g++ -std=c++2c -o passgen hello.cc
+```

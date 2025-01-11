@@ -175,6 +175,10 @@ int main(int argc, char *argv[])
         pass_len = MIN_PASS_LEN;
         passlen_flag = true;
     }
+    else if (passlen_flag == false && (byear_flag || favcolor_flagg || favnumber_flag)) {
+        pass_len = MIN_PASS_LEN;
+        passlen_flag = true;
+    }
     else if (!(passlen_flag || byear_flag || favcolor_flagg || favnumber_flag)) {
         std::cout << "Illegal input\n";
         std::exit(EXIT_FAILURE);

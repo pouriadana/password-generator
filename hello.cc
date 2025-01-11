@@ -88,8 +88,13 @@ int main(int argc, char *argv[])
         std::exit(EXIT_SUCCESS);
     }
     /* Start analyzing command arguments */
-    for (int ncommand = 0; ncommand < argc; ++ncommand) {
-        
+    for (int ncommand = 1; ncommand < argc; ++ncommand) {                               // sub-0 is program name
+        if (ncommand%2 != 0) {                                                          // argument specifier (e.g. -l or -y for length and year repsectively)
+            if (strlen(argv[ncommand]) < 2 || argv[ncommand][0] != '-') {
+                std::cerr << "Invalid argument(s)\n\n";
+                std::exit(EXIT_FAILURE);
+            }
+        }
     }
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};                          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};                  // length == 26

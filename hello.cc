@@ -88,11 +88,26 @@ int main(int argc, char *argv[])
         std::exit(EXIT_SUCCESS);
     }
     /* Start analyzing command arguments */
+    bool passlen_flag = false;
+    bool byear_flag = false;
+    bool favcolor_flagg = false;
     for (int ncommand = 1; ncommand < argc; ++ncommand) {                               // sub-0 is program name
         if (ncommand%2 != 0) {                                                          // argument specifier (e.g. -l or -y for length and year repsectively)
             if (strlen(argv[ncommand]) < 2 || argv[ncommand][0] != '-') {
                 std::cerr << "Invalid argument(s)\n\n";
                 std::exit(EXIT_FAILURE);
+            }
+            if (strlen(argv[ncommand]) == 2) {
+                if (argv[ncommand][1] == 'l') {
+                    passlen_flag = true;
+                }
+                if (argv[ncommand][1] == 'y') {
+                    byear_flag = true;
+                }
+                else if (!passlen_flag && !byear_flag) {
+                    std::cerr << "Invalid argument(s)\n\n";
+                    std::exit(EXIT_FAILURE);
+                }
             }
         }
     }

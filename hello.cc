@@ -87,6 +87,10 @@ int main(int argc, char *argv[])
         show_help();
         std::exit(EXIT_SUCCESS);
     }
+    /* Start analyzing command arguments */
+    for (int ncommand = 0; ncommand < argc; ++ncommand) {
+        
+    }
     const std::string alphabet {"abcdefghijklmnopqrstuvwxyz"};                          // length == 26
     const std::string alphabet_capital {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};                  // length == 26
     const std::string numsymbol {"0123456789!?<>(){}@#$%^&*"};                          // length == 25
